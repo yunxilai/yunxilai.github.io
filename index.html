@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Yunxi Lai is a physician-scientist working at the intersection of ophthalmology, clinical research, artificial intelligence and vision.">
+  <link rel="preload" as="image" href="photo2-640.jpg" media="(min-width: 721px) and (max-width: 1024px)">
   <link rel="icon" href="data:,">
   <title>Yunxi Lai | Ophthalmology, Clinical Research &amp; AI</title>
   <style>
@@ -655,10 +656,65 @@
     }
 
     @media (max-width: 1024px) {
+      .site-header {
+        background: var(--paper);
+        backdrop-filter: none;
+      }
+
       .contact-values {
         display: grid;
         gap: 2px;
         justify-items: start;
+      }
+
+      .about-figure img {
+        mix-blend-mode: normal;
+      }
+    }
+
+    @media (hover: none), (pointer: coarse) {
+      .portrait-flip {
+        perspective: none;
+      }
+
+      .portrait-float {
+        animation: none;
+      }
+
+      .portrait-card,
+      .portrait-flip.is-flipped .portrait-card {
+        transform: none;
+        transform-style: flat;
+        transition: none;
+      }
+
+      .portrait-face,
+      .portrait-face.back {
+        transform: none;
+        transition: opacity .24s ease;
+      }
+
+      .portrait-face {
+        backface-visibility: visible;
+        -webkit-backface-visibility: visible;
+      }
+
+      .portrait-face.front {
+        z-index: 1;
+        opacity: 1;
+      }
+
+      .portrait-face.back {
+        z-index: 2;
+        opacity: 0;
+      }
+
+      .portrait-flip.is-flipped .portrait-face.front {
+        opacity: 0;
+      }
+
+      .portrait-flip.is-flipped .portrait-face.back {
+        opacity: 1;
       }
     }
 
@@ -925,6 +981,10 @@
       .portrait-card {
         transition: none;
       }
+
+      .portrait-face {
+        transition: none;
+      }
     }
   </style>
 </head>
@@ -958,16 +1018,14 @@
           <span class="portrait-card">
             <span class="portrait-face front">
               <picture>
-                <source srcset="photo3-web-640.webp 640w, photo3-web-960.webp 960w" sizes="(max-width: 380px) 76vw, (max-width: 720px) 290px, 310px" media="(max-width: 1024px)" type="image/webp">
-                <source srcset="photo3-web-640.avif 640w, photo3-web-960.avif 960w" sizes="(max-width: 380px) 76vw, (max-width: 720px) 290px, 310px" media="(max-width: 1024px)" type="image/avif">
-                <img src="photo3-web.png" width="1254" height="1254" alt="AI illustration of Yunxi Lai" decoding="async" fetchpriority="high">
+                <source srcset="photo3-web-640.jpg 640w, photo3-web-960.jpg 960w" sizes="(max-width: 380px) 76vw, (max-width: 720px) 290px, 310px" media="(max-width: 1024px)">
+                <img src="photo3-web.png" width="1254" height="1254" alt="AI illustration of Yunxi Lai" fetchpriority="high" data-retry-image>
               </picture>
             </span>
             <span class="portrait-face back">
               <picture>
-                <source srcset="photo2-640.webp 640w, photo2-960.webp 960w" sizes="(max-width: 380px) 76vw, (max-width: 720px) 290px, 310px" media="(max-width: 1024px)" type="image/webp">
-                <source srcset="photo2-640.avif 640w, photo2-960.avif 960w" sizes="(max-width: 380px) 76vw, (max-width: 720px) 290px, 310px" media="(max-width: 1024px)" type="image/avif">
-                <img src="photo2.png" width="1122" height="1402" alt="Portrait photograph of Yunxi Lai" loading="lazy" decoding="async" fetchpriority="low">
+                <source srcset="photo2-640.jpg 640w, photo2-960.jpg 960w" sizes="(max-width: 380px) 76vw, (max-width: 720px) 290px, 310px" media="(max-width: 1024px)">
+                <img src="photo2.png" width="1122" height="1402" alt="Portrait photograph of Yunxi Lai" fetchpriority="high" data-retry-image>
               </picture>
             </span>
           </span>
@@ -1001,9 +1059,8 @@
         <figure class="about-figure">
           <a href="01-original.png" target="_blank" rel="noreferrer" aria-label="Open the research trajectory diagram at full size">
             <picture>
-              <source srcset="01-original-720.webp 720w, 01-original-1400.webp 1400w" sizes="calc(100vw - 48px)" media="(max-width: 1024px)" type="image/webp">
-              <source srcset="01-original-720.avif 720w, 01-original-1400.avif 1400w" sizes="calc(100vw - 48px)" media="(max-width: 1024px)" type="image/avif">
-              <img src="01-original.png" width="1672" height="941" alt="Diagram connecting active vision, cognition and neural processing with clinical care, AI systems, evidence generation and healthcare improvement" loading="lazy" decoding="async">
+              <source srcset="01-original-720.jpg 720w, 01-original-1400.jpg 1400w" sizes="calc(100vw - 48px)" media="(max-width: 1024px)">
+              <img src="01-original.png" width="1672" height="941" alt="Diagram connecting active vision, cognition and neural processing with clinical care, AI systems, evidence generation and healthcare improvement" data-retry-image>
             </picture>
           </a>
         </figure>
@@ -1065,9 +1122,8 @@
           <li class="research-topic">
             <div class="research-visual">
               <picture>
-                <source srcset="3.1-graphite-640.webp 640w, 3.1-graphite-960.webp 960w" sizes="(max-width: 350px) 72vw, 252px" media="(max-width: 1024px)" type="image/webp">
-                <source srcset="3.1-graphite-640.avif 640w, 3.1-graphite-960.avif 960w" sizes="(max-width: 350px) 72vw, 252px" media="(max-width: 1024px)" type="image/avif">
-                <img src="3.1-graphite.png" width="1254" height="1254" alt="Illustration of language, brain activity and clinical decisions" loading="lazy" decoding="async">
+                <source srcset="3.1-graphite-640.jpg 640w, 3.1-graphite-960.jpg 960w" sizes="(max-width: 350px) 72vw, 252px" media="(max-width: 1024px)">
+                <img src="3.1-graphite.png" width="1254" height="1254" alt="Illustration of language, brain activity and clinical decisions" fetchpriority="low" data-retry-image>
               </picture>
             </div>
             <div>
@@ -1080,9 +1136,8 @@
           <li class="research-topic">
             <div class="research-visual">
               <picture>
-                <source srcset="4.1-graphite-640.webp 640w, 4.1-graphite-960.webp 960w" sizes="(max-width: 350px) 72vw, 252px" media="(max-width: 1024px)" type="image/webp">
-                <source srcset="4.1-graphite-640.avif 640w, 4.1-graphite-960.avif 960w" sizes="(max-width: 350px) 72vw, 252px" media="(max-width: 1024px)" type="image/avif">
-                <img src="4.1-graphite.png" width="1254" height="1254" alt="Illustration of clinical data becoming evidence" loading="lazy" decoding="async">
+                <source srcset="4.1-graphite-640.jpg 640w, 4.1-graphite-960.jpg 960w" sizes="(max-width: 350px) 72vw, 252px" media="(max-width: 1024px)">
+                <img src="4.1-graphite.png" width="1254" height="1254" alt="Illustration of clinical data becoming evidence" fetchpriority="low" data-retry-image>
               </picture>
             </div>
             <div>
@@ -1095,9 +1150,8 @@
           <li class="research-topic">
             <div class="research-visual">
               <picture>
-                <source srcset="5.2-graphite-balanced-640.webp 640w, 5.2-graphite-balanced-960.webp 960w" sizes="(max-width: 350px) 72vw, 252px" media="(max-width: 1024px)" type="image/webp">
-                <source srcset="5.2-graphite-balanced-640.avif 640w, 5.2-graphite-balanced-960.avif 960w" sizes="(max-width: 350px) 72vw, 252px" media="(max-width: 1024px)" type="image/avif">
-                <img src="5.2-graphite-balanced.png" width="1254" height="1254" alt="Illustration of clinicians, patients and healthcare improvement in a cycle" loading="lazy" decoding="async">
+                <source srcset="5.2-graphite-balanced-640.jpg 640w, 5.2-graphite-balanced-960.jpg 960w" sizes="(max-width: 350px) 72vw, 252px" media="(max-width: 1024px)">
+                <img src="5.2-graphite-balanced.png" width="1254" height="1254" alt="Illustration of clinicians, patients and healthcare improvement in a cycle" fetchpriority="low" data-retry-image>
               </picture>
             </div>
             <div>
@@ -1233,6 +1287,36 @@
     hoverPortrait.addEventListener("change", () => {
       portraitButton.classList.remove("is-flipped");
       setPortraitState(false);
+    });
+
+    const transparentPixel = "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=";
+
+    document.querySelectorAll("[data-retry-image]").forEach((image) => {
+      const retryImage = () => {
+        const retryCount = Number(image.dataset.retryCount || 0);
+        if (retryCount >= 2) return;
+
+        const failedSource = image.currentSrc || image.src;
+        if (!failedSource || failedSource.startsWith("data:")) return;
+
+        image.dataset.retryCount = String(retryCount + 1);
+        const picture = image.closest("picture");
+        if (picture) {
+          const sources = picture.querySelectorAll("source");
+          for (let index = 0; index < sources.length; index += 1) {
+            sources[index].parentNode.removeChild(sources[index]);
+          }
+        }
+        image.src = transparentPixel;
+
+        window.setTimeout(() => {
+          const separator = failedSource.indexOf("?") === -1 ? "?" : "&";
+          image.src = `${failedSource}${separator}retry=${retryCount + 1}`;
+        }, 400 * (retryCount + 1));
+      };
+
+      image.addEventListener("error", retryImage);
+      if (image.complete && image.naturalWidth === 0) retryImage();
     });
 
     document.getElementById("year").textContent = new Date().getFullYear();
