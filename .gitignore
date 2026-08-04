@@ -1,0 +1,12 @@
+# Keep source documents, drafts, and unused image variants out of the public site.
+*
+!.gitignore
+!.nojekyll
+!index.html
+!photo2.png
+!photo3-web.png
+!01-original.png
+!3.1-graphite.png
+!4.1-graphite.png
+!5.2-graphite-balanced.png
+!CV_Yunxi Lai_EN.pdf
