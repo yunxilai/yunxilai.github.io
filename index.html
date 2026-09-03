@@ -157,13 +157,18 @@
       min-height: 680px;
       display: grid;
       grid-template-columns: minmax(0, 1.35fr) minmax(260px, .65fr);
-      gap: 72px;
+      grid-template-areas:
+        "copy portrait"
+        "facts portrait";
+      column-gap: 72px;
+      row-gap: 42px;
       align-items: center;
       padding-top: 72px;
       padding-bottom: 80px;
     }
 
     .hero-copy-block {
+      grid-area: copy;
       min-width: 0;
     }
 
@@ -195,8 +200,42 @@
       line-height: 1.45;
     }
 
+    .hero-facts {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 28px 32px;
+      max-width: 760px;
+      grid-area: facts;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .hero-facts li {
+      min-width: 0;
+    }
+
+    .hero-facts strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--coral);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 30px;
+      font-weight: 400;
+      line-height: 1;
+    }
+
+    .hero-facts span {
+      display: block;
+      max-width: 210px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
     .portrait-flip {
       position: relative;
+      grid-area: portrait;
       justify-self: end;
       width: min(100%, 310px);
       padding: 0;
@@ -730,7 +769,8 @@
 
       .hero {
         grid-template-columns: minmax(0, 1.2fr) minmax(240px, .8fr);
-        gap: 44px;
+        column-gap: 44px;
+        row-gap: 34px;
       }
 
       h1 {
@@ -739,6 +779,11 @@
 
       .hero-intro {
         font-size: 22px;
+      }
+
+      .hero-facts {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px 28px;
       }
 
       .section-title {
@@ -811,7 +856,11 @@
       .hero {
         min-height: 0;
         grid-template-columns: 1fr;
-        gap: 52px;
+        grid-template-areas:
+          "copy"
+          "portrait"
+          "facts";
+        gap: 42px;
         padding-top: 64px;
         padding-bottom: 76px;
       }
@@ -823,6 +872,19 @@
       .portrait-flip {
         justify-self: center;
         width: min(76vw, 290px);
+      }
+
+      .hero-facts {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px 24px;
+      }
+
+      .hero-facts strong {
+        font-size: 27px;
+      }
+
+      .hero-facts span {
+        font-size: 13.5px;
       }
 
       .section-head,
@@ -929,6 +991,14 @@
         font-size: 20px;
       }
 
+      .hero-facts {
+        gap: 20px 18px;
+      }
+
+      .hero-facts span {
+        max-width: 300px;
+      }
+
       .timeline-item {
         grid-template-columns: 1fr;
         gap: 8px;
@@ -1032,6 +1102,14 @@
         </span>
         <span class="sr-only" id="portrait-status" aria-live="polite">AI illustration shown.</span>
       </button>
+
+      <ul class="hero-facts" aria-label="Research and clinical experience highlights">
+        <li><strong>6 years</strong><span>of ophthalmology training</span></li>
+        <li><strong>3</strong><span>complementary lines of inquiry</span></li>
+        <li><strong>100K+</strong><span>retrospective blood-test records analyzed</span></li>
+        <li><strong>1.7M+</strong><span>people reached through an in-house ophthalmic LLM</span></li>
+        <li><strong>668</strong><span>children in a prospective cohort built from scratch</span></li>
+      </ul>
     </div>
 
     <section class="about" id="about">
@@ -1156,9 +1234,9 @@
             </div>
             <div>
               <h3>Between populations and patients</h3>
-              <p>Clinical knowledge moves across levels: guidelines inform individual care, while data and experience from individual encounters can accumulate and generate knowledge for broader populations. In a retrospective study of ophthalmic surgical patients, I analyzed whether <a class="external-link" href="https://www.choosingwisely.org/" target="_blank" rel="noreferrer">Choosing Wisely</a> recommendations on selective preoperative testing, developed in other healthcare contexts, were appropriate for patients in China.</p>
+              <p>Clinical knowledge flows in different forms: guidelines inform a clinician&rsquo;s practice (all for one), while data and experience from each encounter can be transformed into knowledge for broader populations (one for all). In a retrospective study of ophthalmic surgical patients, I analyzed whether <a class="external-link" href="https://www.choosingwisely.org/" target="_blank" rel="noreferrer">Choosing Wisely</a> recommendations on selective preoperative testing, developed in other healthcare contexts, were appropriate for patients in China.</p>
               <p>Drawing on the <a class="external-link" href="https://nam.edu/our-work/programs/leadership-consortium/learning-health-system-series/" target="_blank" rel="noreferrer">Learning Health System</a> framework, another line of my work focuses on the transition from practice to data, and from data to knowledge (natural language-clinical language-research data). The broader aim is to support a continuous learning cycle in which routine clinical data and experience are transformed into actionable knowledge, interpreted alongside external evidence, and fed back into practice.</p>
-              <p>Overall, my work connects how clinical information is elicited, how data quality is built into evidence generation, and how clinical knowledge is interpreted and applied across settings.</p>
+              <p>Overall, my work connects how clinical information is captured, transformed into evidence and knowledge, and ultimately used to improve care.</p>
             </div>
           </li>
         </ol>
