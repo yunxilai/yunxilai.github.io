@@ -201,36 +201,45 @@
     }
 
     .hero-facts {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 28px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
       max-width: 760px;
       grid-area: facts;
+      margin: 0;
+      padding: 0;
+    }
+
+    .hero-fact-group {
+      display: grid;
+      gap: 28px 32px;
       margin: 0;
       padding: 0;
       list-style: none;
     }
 
-    .hero-facts li {
+    .hero-fact-group:first-child {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      max-width: 488px;
+    }
+
+    .hero-fact-group:last-child {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .hero-fact-group li {
       min-width: 0;
-    }
-
-    .hero-facts strong {
-      display: block;
-      margin-bottom: 5px;
-      color: var(--coral);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 30px;
-      font-weight: 400;
-      line-height: 1;
-    }
-
-    .hero-facts span {
-      display: block;
-      max-width: 210px;
       color: var(--muted);
-      font-size: 14px;
-      line-height: 1.4;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .hero-fact-group strong {
+      color: var(--coral);
+      font-family: inherit;
+      font-size: inherit;
+      font-weight: 700;
+      line-height: inherit;
     }
 
     .portrait-flip {
@@ -781,7 +790,8 @@
         font-size: 22px;
       }
 
-      .hero-facts {
+      .hero-fact-group,
+      .hero-fact-group:last-child {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 24px 28px;
       }
@@ -875,16 +885,11 @@
       }
 
       .hero-facts {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 22px 24px;
       }
 
-      .hero-facts strong {
-        font-size: 27px;
-      }
-
-      .hero-facts span {
-        font-size: 13.5px;
+      .hero-fact-group li {
+        font-size: 15px;
       }
 
       .section-head,
@@ -992,11 +997,15 @@
       }
 
       .hero-facts {
-        gap: 20px 18px;
+        gap: 28px;
       }
 
-      .hero-facts span {
-        max-width: 300px;
+      .hero-fact-group,
+      .hero-fact-group:first-child,
+      .hero-fact-group:last-child {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        max-width: none;
       }
 
       .timeline-item {
@@ -1103,13 +1112,17 @@
         <span class="sr-only" id="portrait-status" aria-live="polite">AI illustration shown.</span>
       </button>
 
-      <ul class="hero-facts" aria-label="Research and clinical experience highlights">
-        <li><strong>6 years</strong><span>of ophthalmology training</span></li>
-        <li><strong>3</strong><span>complementary lines of inquiry</span></li>
-        <li><strong>100K+</strong><span>retrospective blood-test records analyzed</span></li>
-        <li><strong>1.7M+</strong><span>people reached through an in-house ophthalmic LLM</span></li>
-        <li><strong>668</strong><span>children in a prospective cohort built from scratch</span></li>
-      </ul>
+      <div class="hero-facts" aria-label="Research and clinical experience highlights">
+        <ul class="hero-fact-group">
+          <li>Completed <strong>6 years</strong> of ophthalmology training</li>
+          <li>Pursued <strong>3</strong> complementary lines of inquiry</li>
+        </ul>
+        <ul class="hero-fact-group">
+          <li>Analyzed <strong>100K+</strong> blood-test records</li>
+          <li>Co-developed <strong>1</strong> ophthalmic large language model reaching <strong>1.7M+</strong> people</li>
+          <li>Co-led the development of a <strong>668-child</strong> prospective cohort</li>
+        </ul>
+      </div>
     </div>
 
     <section class="about" id="about">
